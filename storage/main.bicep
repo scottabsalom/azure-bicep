@@ -1,10 +1,12 @@
 targetScope = 'subscription'
 
+param rgName string = 'rgstorage'
+param rgLocation string = 'UK South'
 param storageAccName string = 'sra001'
 
 resource rg 'Microsoft.Resources/resourceGroups@2021-01-01' = {
-  name: 'rgstorage'
-  location: 'UK South'
+  name:rgName
+  location:rgLocation
 }
 
 module modStorage 'storage.bicep' = {
